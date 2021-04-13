@@ -27,7 +27,7 @@
 def parse(packet):
     peer = packet.retrieve("peer")
     rssi = packet.retrieve("rssi")
-    svc_data = packet.retrieve("Manufacturer ID")
+    svc_data = packet.retrieve("Manufacturer Specific Data")
     adv_payload = packet.retrieve("Adv Payload")
     if peer and rssi and svc_data and adv_payload:
         mac = peer[0].val
