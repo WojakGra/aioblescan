@@ -27,16 +27,16 @@
 def parse(packet):
     peer = packet.retrieve("peer")
     rssi = packet.retrieve("rssi")
-    svc_data = packet.retrieve("Manufacturer Specific Data")
-    adv_payload = packet.retrieve("Adv Payload")
-    if peer and rssi and svc_data and adv_payload:
+    #svc_data = packet.retrieve("Manufacturer Specific Data")
+    #adv_payload = packet.retrieve("Adv Payload")
+    if peer and rssi:
         mac = peer[0].val
-        uuid = svc_data[0].val
-        if "38034" == uuid:
-                return parse_payload(mac, rssi[0].val, adv_payload[0].val)
+        #uuid = svc_data[0].val
+        #if "38034" == uuid:
+        return parse_payload(mac, rssi[0].val)
 
 
-def parse_payload(mac, rssi, payload):
+def parse_payload(mac, rssi):
     #temp = int.from_bytes(payload[6:8], "big", signed=True) / 10.0
     #humidity = int.from_bytes(payload[8:9], "big")
     #battery = int.from_bytes(payload[9:10], "big")
