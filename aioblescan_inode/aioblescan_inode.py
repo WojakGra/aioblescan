@@ -61,7 +61,7 @@ class MACAddr:
 
     """
 
-    def __init__(self, name, mac="00:00:00:00:00:00"):
+    def __init__(self, name, mac="000000000000"):
         self.name = name
         self.val = mac.lower()
 
@@ -85,7 +85,7 @@ class MACAddr:
             :returns: The datastream minus the bytes consumed
             :rtype: bytes
         """
-        self.val = ":".join("%02x" % x for x in reversed(data[:6]))
+        self.val = "".join("%02x" % x for x in reversed(data[:6]))
         return data[6:]
 
     def __len__(self):
