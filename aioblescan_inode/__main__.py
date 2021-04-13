@@ -25,12 +25,12 @@ import sys
 import asyncio
 import argparse
 import re
-import aioblescan as aiobs
-from aioblescan.plugins import EddyStone
-from aioblescan.plugins import RuuviWeather
-from aioblescan.plugins import BlueMaestro
-from aioblescan.plugins import ATCMiThermometer
-from aioblescan.plugins import INode4
+import aioblescan_inode as aiobs
+from aioblescan_inode.plugins import EddyStone
+from aioblescan_inode.plugins import RuuviWeather
+from aioblescan_inode.plugins import BlueMaestro
+from aioblescan_inode.plugins import ATCMiThermometer
+from aioblescan_inode.plugins import INode4
 
 # global
 opts = None
