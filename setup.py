@@ -8,8 +8,8 @@ with open("README.rst", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="aioblescan",
-    packages=["aioblescan", "aioblescan.plugins"],
+    name="aioblescan_inode",
+    packages=["aioblescan_inode", "aioblescan_inode.plugins"],
     # packages=setuptools.find_packages(),
     version=version,
     author="François Wautier",
@@ -34,6 +34,6 @@ setuptools.setup(
         "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",
     ],
-    entry_points={"console_scripts": ["aioblescan=aioblescan.__main__:main"]},
+    entry_points={"console_scripts": ["aioblescan_inode=aioblescan_inode.__main__:main"]},
     zip_safe=False,
 )
