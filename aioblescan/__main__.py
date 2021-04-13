@@ -30,6 +30,7 @@ from aioblescan.plugins import EddyStone
 from aioblescan.plugins import RuuviWeather
 from aioblescan.plugins import BlueMaestro
 from aioblescan.plugins import ATCMiThermometer
+from aioblescan.plugins import INode4
 
 # global
 opts = None
@@ -77,6 +78,10 @@ def my_process(data):
         xx = ATCMiThermometer().decode(ev)
         if xx:
             print("Temperature info {}".format(xx))
+    elif opts.inode:
+        xx = INode4().decode(ev)
+        if xx:
+            print("XD {}".format(xx))
     else:
         ev.show(0)
 
@@ -88,6 +93,13 @@ def main(args=None):
     parser.add_argument(
         "-e",
         "--eddy",
+        action="store_true",
+        default=False,
+        help="Look specificaly for Eddystone messages.",
+    )
+    parser.add_argument(
+        "-Z",
+        "--inode",
         action="store_true",
         default=False,
         help="Look specificaly for Eddystone messages.",
