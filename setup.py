@@ -17,7 +17,7 @@ setuptools.setup(
     description="Scanning Bluetooth for advertised info with asyncio.",
     long_description=long_description,
     long_description_content_type="text/x-rst",
-    url="http://github.com/frawau/aioblescan",
+    url="http://github.com/frawau/aioblescan_inode",
     keywords=["bluetooth", "advertising", "hci", "ble"],
     license="MIT",
     install_requires=[],
